@@ -6,8 +6,9 @@ import styled from "styled-components";
 import Swal from "sweetalert2";
 import {Wheel} from "react-custom-roulette";
 import Logo from "./edcanlogo.svg";
+import EdcanChan from "./edcanchan.svg";
 
-const FormularioTexto = () => {
+const Roulette = () => {
     const [inputList, setInputList] = useState([
         {
             id: uuidv4(),
@@ -40,38 +41,12 @@ const FormularioTexto = () => {
             desc: "감자칩"
         },
     ]);
-    const [List, setList] = useState([
-        {
-            text: "1등",
-            desc: "G102 마우스",
-        },
-        {
-            text: "2등",
-            desc: "소형 아크릴 스탠드",
-        },
-        {
-            text: "3등",
-            desc: "키링",
-        },
-        {
-            text: "4등",
-            desc: "안경닦이 or 마우스패드",
-        },
-        {
-            text: "5등",
-            desc: "약과"
-        },
-        {
-            text: "6등",
-            desc: "감자칩"
-        },
-    ]);
 
     // handle input change
     const [mustSpin, setMustSpin] = useState(false);
     const [prizeNumber, setPrizeNumber] = useState(0);
     const [rouletteData, setRouletteData] = useState(inputList);
-    const [prize,setPrize] = useState([1,5,10,20,50,1]);
+    const [prize,setPrize] = useState([1,5,10,20,50,100]);
 
     function customRandom(prize) {
         // filter out indices with prize > 0
@@ -270,7 +245,7 @@ const FormularioTexto = () => {
             <Prize>
                 <PrizeBox>
                     {
-                        List.map((item, index)=>(
+                        inputList.map((item, index)=>(
                         <PrizeContainer left={prize[index]}>
                             {item.text}&nbsp;{item.desc}: 잔여 {prize[index]}개
                         </PrizeContainer>
@@ -281,6 +256,12 @@ const FormularioTexto = () => {
         </div>
     );
 };
+
+const Chan = styled.image`
+  display: flex;
+  width: 100px;
+  height: 100px;
+`;
 
 const PrizeContainer = styled.div`
   width: 500px;
@@ -335,4 +316,4 @@ const Subtitle = styled.text`
   color: #00A9CE;
 `;
 
-export default FormularioTexto;
+export default Roulette;
