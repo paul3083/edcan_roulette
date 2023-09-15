@@ -53,7 +53,7 @@ const Roulette = () => {
     const [dataForWheel, setDataForWheel] = useState([
         '1등', '2등', '3등', '4등', '5등', '6등'
     ]);
-    const [prizes, setPrizes] = useState([1, 1, 1, 1, 1, 1]);
+    const [prizes, setPrizes] = useState([0, 4, 9, 18, 45, 85]);
 
     useEffect(() => {
         console.log(prizes);
