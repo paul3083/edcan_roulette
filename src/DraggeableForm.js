@@ -68,7 +68,7 @@ const Roulette = () => {
             return acc;
         }, []);
 
-        const probabilities = validIndices.map(index => [0, 0.02, 0.05, 0.1, 0.2, 0.63][index]);
+        const probabilities = validIndices.map(index => [0, 0.02, 0.05, 0.1, 0.27, 0.63][index]);
         console.log(probabilities)
         const randomNumber = Math.random();
         let cumulativeProbability = 0;
