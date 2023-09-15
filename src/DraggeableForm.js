@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { BiTrash, BiGridVertical, BiPlus } from "react-icons/bi";
-import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 import { Wheel } from "react-custom-roulette";
